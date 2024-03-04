@@ -1,0 +1,16 @@
+<app-top-bar></app-top-bar>
+
+<h2>STEP 1 OF 3</h2>
+
+<form [formGroup]="form" (ngSubmit)="onNext()">
+    <div>
+      <label for="email">Email</label>
+      <input type="email" id="email" formControlName="email">
+    </div>
+    <div>
+      <label for="password">Password</label>
+      <input type="password" id="password" formControlName="password">
+    </div>
+    <button type="submit">Next</button>
+  </form>
+  

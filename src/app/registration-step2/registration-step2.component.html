@@ -1,0 +1,15 @@
+<app-top-bar></app-top-bar>
+
+<h2>STEP 2 OF 3</h2>
+
+<form [formGroup]="form" (ngSubmit)="onNext()">
+    <div>
+      <label for="username">Username</label>
+      <input type="username" id="username" formControlName="username">
+    </div>
+    <div>
+      <label for="tmdb_key">tmdb_key</label>
+      <input type="tmdb_key" id="tmdb_key" formControlName="tmdb_key">
+    </div>
+    <button type="submit">Next</button>
+  </form>
