@@ -1,15 +1,21 @@
-<app-top-bar></app-top-bar>
+<div class="root">
+  <app-top-bar></app-top-bar>
+  <div class="content">
 
-<h2>STEP 2 OF 3</h2>
 
-<form [formGroup]="form" (ngSubmit)="onNext()">
+  <h2>STEP 2 OF 3</h2>
+  <form [formGroup]="form" (ngSubmit)="onNext()">
+    <mat-form-field>
+      <mat-label for="username">Enter your username</mat-label>
+      <input matInput type="email" id="username" formControlName="username">
+    </mat-form-field>
     <div>
-      <label for="username">Username</label>
-      <input type="username" id="username" formControlName="username">
+      <mat-form-field>
+        <mat-label for="tmdb_key">Add your Tmbd Api Key</mat-label>
+        <input matInput type="text" id="tmdb_key" formControlName="tmdb_key">
+      </mat-form-field>
     </div>
-    <div>
-      <label for="tmdb_key">tmdb_key</label>
-      <input type="tmdb_key" id="tmdb_key" formControlName="tmdb_key">
-    </div>
-    <button type="submit">Next</button>
+    <button type="submit" mat-flat-button color="warn">Next</button>
   </form>
+</div>
+</div>

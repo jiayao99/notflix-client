@@ -1,7 +1,35 @@
-<app-top-bar></app-top-bar>
+<div class="root">
+  <app-top-bar></app-top-bar>
+  <div class="content">
+    <h2>STEP 3 OF 3</h2>
+    <form [formGroup]="form" (ngSubmit)="onNext()">
+      <table>
+        <thead>
+          <tr>
+            <th>Plan</th>
+            <th>Monthly Price</th>
+            <th>Video Quality</th>
+            <th>Resolution</th>
+            <th>Watch on your TV</th>
+            <th>Select</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let plan of plans">
+            <td>{{ plan.role | titlecase }}</td>
+            <td>{{ plan.monthlyPrice }}</td>
+            <td>{{ plan.videoQuality }}</td>
+            <td>{{ plan.resolution }}</td>
+            <td>{{ plan.watchOnDevices }}</td>
+            <td>
+              <input type="radio" [value]="plan.role" formControlName="role" [id]="plan.role" />
+<label [for]="plan.role"></label>
 
-<h2>STEP 3 OF 3</h2>
-
-<form [formGroup]="form" (ngSubmit)="onNext()">
-
-  </form>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button type="submit" mat-flat-button color="warn">Submit</button>
+    </form>
+  </div>
+</div>

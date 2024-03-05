@@ -10,6 +10,7 @@ import { User } from '../user.model';
   styleUrl: './registration-step1.component.scss'
 })
 export class RegistrationStep1Component {
+  hide = true;
   form = this.fb.group({
     email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required]
@@ -24,7 +25,7 @@ export class RegistrationStep1Component {
         password: this.form.value.password ?? undefined
       };
       this.registrationService.setUserData(userData);
-      this.router.navigate(['/step2']);
+      this.router.navigate(['registration/step2']);
     }
   }
 }

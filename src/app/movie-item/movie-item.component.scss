@@ -1,3 +1,33 @@
 .movie-item {
-    background-color: gray;
+  max-width: 20vw;
+  margin-bottom: 8px;
+  height: 55vw;
+  overflow: hidden;
+  color: lightgray;
+  cursor: pointer;
+
+  background: rgba(76, 76, 76, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(13.1px);
+  .movie-item-header {
+    padding: 15px;
+  }
+
+  mat-card-title {
+    font-size: 24px;
+    font-weight: 900;
+  }
+  mat-card-subtitle {
+    color: lightgray;
+  }
+
+  mat-card-content {
+    font-size:15px;
+  }
+
+
+  &:hover {
+    background-color: rgba(76, 76, 76, 0.5);
+  }
 }

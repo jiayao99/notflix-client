@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, Input } from '@angular/core';
 
 @Component({
@@ -7,4 +8,14 @@ import { Component, Input } from '@angular/core';
 })
 export class TopBarComponent {
   @Input() showSignInButton: boolean = true;
+
+  constructor(private router: Router) {};
+
+  onGoHome() {
+    this.router.navigate(['home']);
+  }
+
+  onSignIn() {
+    this.router.navigate(['signin']);
+  }
 }

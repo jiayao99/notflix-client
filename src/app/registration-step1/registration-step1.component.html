@@ -1,16 +1,24 @@
-<app-top-bar></app-top-bar>
+<div class="root">
+  <app-top-bar></app-top-bar>
+  <div class="content">
 
-<h2>STEP 1 OF 3</h2>
 
-<form [formGroup]="form" (ngSubmit)="onNext()">
+  <h2>STEP 1 OF 3</h2>
+  <form [formGroup]="form" (ngSubmit)="onNext()">
+    <mat-form-field>
+      <mat-label for="email">Enter your email</mat-label>
+      <input matInput placeholder="jiayao@example.com" type="email" id="email" formControlName="email">
+    </mat-form-field>
     <div>
-      <label for="email">Email</label>
-      <input type="email" id="email" formControlName="email">
+      <mat-form-field>
+        <mat-label for="password">Enter your password</mat-label>
+        <input matInput type="password" id="password" [type]="hide ? 'password' : 'text'" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
     </div>
-    <div>
-      <label for="password">Password</label>
-      <input type="password" id="password" formControlName="password">
-    </div>
-    <button type="submit">Next</button>
+    <button type="submit" mat-flat-button color="warn">Next</button>
   </form>
-  
+</div>
+</div>

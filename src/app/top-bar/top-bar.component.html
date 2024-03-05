@@ -4,9 +4,10 @@
       src="../../assets/home-page/netflix_icon_logo.png"
       alt="Logo"
       class="logo"
+      (click)="onGoHome()"
     />
   </div>
   <div class="login-button-container" *ngIf="showSignInButton">
-    <button class="login-button">Sign In</button>
+    <button class="login-button" (click)="onSignIn()">Sign In</button>
   </div>
 </div>

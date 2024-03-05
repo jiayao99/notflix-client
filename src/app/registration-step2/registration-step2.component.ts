@@ -24,7 +24,7 @@ export class RegistrationStep2Component {
         tmdb_key: this.form.value.tmdb_key ?? undefined
       };
       this.registrationService.setUserData(userData);
-      this.router.navigate(['/step3']);
+      this.router.navigate(['registration/step3']);
     }
   }
 }

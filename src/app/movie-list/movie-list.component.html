@@ -1,3 +1,9 @@
-<div *ngFor="let movie of movies">
-  <app-movie-item [movie]="movie"></app-movie-item>
+<div class = "root">
+  <app-top-bar [showSignInButton]="false"></app-top-bar>
+  <mat-grid-list cols="4" rowHeight="2:5">
+    <mat-grid-tile *ngFor="let movie of movies">
+      <app-movie-item [movie]="movie"></app-movie-item>
+    </mat-grid-tile>
+  </mat-grid-list>
+  
 </div>
