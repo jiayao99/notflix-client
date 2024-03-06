@@ -15,7 +15,4 @@ export class HomePageComponent {
     this.router.navigate(['registration/step1']);
   }
 
-  onSignIn() {
-    this.router.navigate(['signin']);
-  }
 }
