@@ -1,0 +1,32 @@
+<div
+  class="root"
+  *ngIf="movie"
+  [ngStyle]="{
+    'background-image':
+      'linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.4)), url(https://image.tmdb.org/t/p/w500' +
+      movie.poster_path +
+      ')'
+  }"
+>
+  <app-top-bar></app-top-bar>
+  <div class="content">
+    <h2>{{ movie.title.toUpperCase() }}</h2>
+    <div class="player">
+      <youtube-player videoId="{{ video?.key }}"></youtube-player>
+    </div>
+    <div class="details">
+      <div class="date">{{ movie.release_date.split("-")[0] }} |</div>
+      <div class="rating">
+        &#9733;{{ movie.vote_average.toPrecision(2) }}/10 |
+      </div>
+      <mat-chip-set class="genres">
+        <mat-chip *ngFor="let genre of movie.genres">{{
+          genre.name.toUpperCase()
+        }}</mat-chip>
+      </mat-chip-set>
+    </div>
+    <div class="overview">
+      <p>{{ movie.overview }}</p>
+    </div>
+  </div>
+</div>

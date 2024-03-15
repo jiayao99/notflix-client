@@ -1,0 +1,16 @@
+<div class="root">
+  <app-top-bar></app-top-bar>
+  <mat-spinner *ngIf="isLoading" diameter="50"></mat-spinner>
+  <ng-container *ngIf="!isLoading">
+    <div class="movie-list"       infiniteScroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="50"
+    (scrolled)="onScroll()">
+      <mat-grid-list cols="4" rowHeight="2:5">
+        <mat-grid-tile *ngFor="let movie of movies; trackBy: trackByMovieId" [routerLink]="['/movies', movie.id]">
+          <app-movie-card [movie]="movie"></app-movie-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </ng-container>
+</div>

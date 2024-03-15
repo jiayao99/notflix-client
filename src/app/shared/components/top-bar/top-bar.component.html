@@ -1,0 +1,12 @@
+<div class="top-bar">
+  <div class="logo-container">
+    <img src="../../assets/home-page/netflix_icon_logo.png" alt="Logo" class="logo" (click)="onGoHome()" />
+  </div>
+  <div *ngIf="!isLoggedIn">
+    <button mat-flat-button color="warn" class="login-button" (click)="onSignIn()">Sign In</button>
+  </div>
+  <div *ngIf="isLoggedIn" class="user-container">
+    <div class="username">{{ userName }}</div>
+    <button mat-flat-button color="warn" class="logout-button" (click)="onSignOut()">Sign Out</button>
+  </div>
+</div>
